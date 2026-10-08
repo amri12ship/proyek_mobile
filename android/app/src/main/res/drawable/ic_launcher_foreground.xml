@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Launcher icon foreground: the gold fingerprint of the in-app emblem.
+  Drawn inside the 72dp adaptive-icon safe zone (18..90) so no part of the
+  mark is clipped by an aggressive launcher mask.
+
+  The ridges use a single solid gold rather than a gradient: at launcher sizes
+  the difference is invisible, and AAPT2 only accepts aapt:attr blocks for
+  colour attributes, not for stroke width or cap.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!--
+      Five concentric ridges centred on (54,60). Each arc starts at 126 deg and
+      sweeps 288 deg, leaving a gap along the bottom edge, which is what makes
+      it read as a fingerprint instead of a target.
+    -->
+    <path
+        android:pathData="M49.30,66.47 A8,8 0 1 1 58.70,66.47"
+        android:strokeColor="#FFE2C489"
+        android:strokeWidth="3.8"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M46.36,70.52 A13,13 0 1 1 61.64,70.52"
+        android:strokeColor="#FFD9B77A"
+        android:strokeWidth="3.8"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M43.42,74.56 A18,18 0 1 1 64.58,74.56"
+        android:strokeColor="#FFCFA96A"
+        android:strokeWidth="3.8"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M40.48,78.61 A23,23 0 1 1 67.52,78.61"
+        android:strokeColor="#FFC49B5B"
+        android:strokeWidth="3.8"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M37.54,82.65 A28,28 0 1 1 70.46,82.65"
+        android:strokeColor="#FFB98D4C"
+        android:strokeWidth="3.8"
+        android:strokeLineCap="round" />
+
+    <!-- Tail of the print, running down through the gap. -->
+    <path
+        android:pathData="M54,58 L54,70"
+        android:strokeColor="#FFD9B77A"
+        android:strokeWidth="3.8"
+        android:strokeLineCap="round" />
+
+</vector>

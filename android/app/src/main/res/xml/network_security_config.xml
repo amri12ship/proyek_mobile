@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        The attendance server runs on a workstation inside the local network
+        over plain HTTP. Android blocks cleartext by default (API 28+), so the
+        development host is allowed explicitly instead of enabling it for
+        every destination.
+    -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <domain-config cleartextTrafficPermitted="true">
+        <!--
+            Default host of the app. `adb reverse tcp:8000 tcp:8000` maps this
+            loopback on the device to port 8000 on the development machine, so
+            the API works over USB regardless of the device's network.
+        -->
+        <domain includeSubdomains="false">localhost</domain>
+        <domain includeSubdomains="false">127.0.0.1</domain>
+        <!-- Android emulator loopback alias. -->
+        <domain includeSubdomains="false">10.0.2.2</domain>
+        <!-- Development machine on the office LAN, kept for Wi-Fi testing. -->
+        <domain includeSubdomains="false">192.168.100.18</domain>
+    </domain-config>
+
+</network-security-config>
